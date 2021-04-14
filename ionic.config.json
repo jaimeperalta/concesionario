@@ -1,0 +1,7 @@
+{
+  "name": "concesionario",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
