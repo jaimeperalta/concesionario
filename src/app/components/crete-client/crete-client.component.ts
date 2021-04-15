@@ -67,7 +67,7 @@ export class CreteClientComponent implements OnInit {
         this.generalService.presetnToastV("El cleinte ya se encuentra registrado","Aceptar");
       }
       else if(xhr.status == "noCampos"){
-        this.generalService.presetnToastR("Por faavor completa todos los campos para continuar","Aceptar");
+        this.generalService.presetnToastR("Por favor completa todos los campos para continuar","Aceptar");
       }
       else{
         this.generalService.presetnToastR("Error al procesar la solicitud, intenta más tarde","Aceptar",6000);
