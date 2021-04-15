@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Concesionario</string>
+    <string name="title_activity_main">Concesionario</string>
+    <string name="package_name">com.consultec.concesionario</string>
+    <string name="custom_url_scheme">com.consultec.concesionario</string>
+</resources>

@@ -1,0 +1,20 @@
+<ion-content>
+  <div [formGroup]="signInForm" class="contentLogin">
+    <ion-row class="centerContent">
+      <ion-col size="12">
+        <ion-avatar>
+          <img src="assets/logo.png">
+        </ion-avatar>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input formControlName="email" placeholder="Email"></ion-input>
+      </ion-col>
+      <ion-col size="12">
+        <ion-input formControlName="password"  type="password" placeholder="Password"></ion-input>
+      </ion-col>
+      <ion-col size="12" class="boton">
+        <ion-button (click)="login()">Iniciar sesión</ion-button>
+      </ion-col>
+    </ion-row>
+  </div>
+</ion-content>

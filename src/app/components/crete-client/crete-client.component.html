@@ -1,0 +1,86 @@
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+
+    <ion-buttons slot="start" (click)="dismissModal()">
+      <ion-icon name="arrow-back-outline"></ion-icon>
+    </ion-buttons>
+
+    <ion-title>
+      Nuevo Cliente
+    </ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <div [formGroup]="formData">
+    <ion-row class="contentForm">
+      <ion-col size="12">
+        <ion-label>Nombre</ion-label>
+        <ion-input formControlName="name"></ion-input>
+      </ion-col>
+  
+      <ion-col size="12">
+        <ion-label>Apellido</ion-label>
+        <ion-input formControlName="lastName"></ion-input>
+      </ion-col>
+  
+      <ion-col size="12">
+        <ion-label>Correo Electrónico</ion-label>
+        <ion-input formControlName="email"></ion-input>
+      </ion-col>
+  
+      <ion-col size="12">
+        <ion-label>Telefono</ion-label>
+        <ion-input type="number" formControlName="phoneNumber"></ion-input>
+      </ion-col>
+  
+      <ion-col size="12">
+        <ion-label>Localidad</ion-label>
+        <ion-select  formControlName="locality" locokText="Aceptar" cancelText="Cerrar">
+          <ion-select-option *ngFor="let locality of clientService.localities" [value]="locality.zone_id">{{locality.name}}</ion-select-option>
+        </ion-select>
+      </ion-col>
+
+
+      <ion-col size="12">
+        <ion-label>Concesionario</ion-label>
+        <ion-select value="1" formControlName="concesionario" locokText="Aceptar" cancelText="Cerrar">
+          <ion-select-option  value="1">Concesionario 1</ion-select-option>
+          <ion-select-option  value="2">Concesionario 2</ion-select-option>
+          <ion-select-option  value="3">Concesionario 3</ion-select-option>
+        </ion-select>
+      </ion-col>
+  
+      <ion-col size="12">
+        <ion-label>Número de documento</ion-label>
+        <ion-input type="number" formControlName="documentId"></ion-input>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="!client">
+      <ion-col size="6" offset="3">
+        <ion-button (click)="guardar()">Guardar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="client && !isEdit">
+      <ion-col size="6">
+        <ion-button (click)="editar()">Modificar</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button  class="eliminar" (click)="eliminar()">Eliminar</ion-button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="client && isEdit">
+      <ion-col size="6">
+        <ion-button class="volver" (click)="editar()">volver</ion-button>
+      </ion-col>
+      <ion-col size="6">
+        <ion-button (click)="actualizar()">Actualizar</ion-button>
+      </ion-col>
+    </ion-row>
+
+  </div>
+</ion-content>

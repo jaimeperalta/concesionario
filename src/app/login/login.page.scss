@@ -1,0 +1,40 @@
+
+ion-content{
+    --background: linear-gradient(to right, #136a8a, #267871);
+    .contentLogin{
+        padding-top: 50%;;
+        .centerContent{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            ion-avatar{
+                margin: auto;
+                width: 200px;
+                height: 200px;
+                img{
+                    object-fit: contain;
+                }
+            }
+
+            ion-input{
+                border-bottom: 1px solid white;
+                text-align: center;
+                width: 90%;
+                margin: auto;
+                margin-top: 20px;
+            }
+
+
+            .boton{
+                text-align: center;
+                ion-button{
+                    width: 50%;
+                    margin-top: 15px;
+                    --background: cadetblue;
+                    --background-activated: cadetblue!important;
+                }
+            }
+        }
+    }
+}

@@ -24,3 +24,60 @@
 @import "~@ionic/angular/css/text-alignment.css";
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
+
+
+ion-header{
+  background: #267871!important;
+}
+
+ion-toolbar{
+  --background: #267871!important;
+}
+
+
+.loadingClass{
+    outline: none;
+  .loading-wrapper{
+        outline: none;
+      background-color: transparent!important;
+      backdrop-filter:none!important;
+      box-shadow: none!important;
+      border: none!important;
+      img{
+          width: 120px;
+          height: 120px;
+          object-fit: contain;
+      }
+  }
+}
+
+.redToast{
+    outline: none;
+    --background: #bf272d !important;        
+    text-align: center !important;
+    --border-radius: 3px;
+    --color:#fff;
+    --button-color: #fff;
+    word-break: break-word;
+}
+
+.greenToast{
+  outline: none;
+  --background: green !important;        
+  text-align: center !important;
+  --border-radius: 3px;
+  --color:#fff;
+  --button-color: #fff;
+  word-break: break-word;
+}
+
+ion-popover{
+  .popover-wrapper{
+    .popover-content{
+      .select-interface-option{
+        --background: white;
+        color: black;
+      }
+    }
+  }
+}

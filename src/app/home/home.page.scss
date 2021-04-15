@@ -1,27 +1,33 @@
-#container {
+
+ion-content{
+  --background:white;
+}
+
+.headerTittles, .contentList{
+  border-bottom: 1px solid gray;
+  color: black;
   text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+.itemSelect{
+  --background:white;
+  border-bottom: 1px solid gray;
+  ion-select, ion-label{
+    color:black;
+  }
 }
 
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+.contentList{
+  ion-col {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
-#container a {
-  text-decoration: none;
+ion-searchbar{
+  --background: white;
+  color:black;
+  border-bottom: 1px solid gray;
+  margin-bottom: 10px;
 }

@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Concesionario
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,12 +9,67 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Concesionario</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed" (click)="crear()">
+    <ion-fab-button>
+      <ion-icon name="add-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-row>
+    <ion-col size="12">
+      <ion-item class="itemSelect" lines="none" >
+        <ion-label>Localidad:</ion-label>
+        <ion-select [value]="locality" [(ngModel)]="locality" (ngModelChange)="getData()" locokText="Aceptar" cancelText="Cerrar">
+          <ion-select-option *ngFor="let locality of clientService.localities" [value]="locality.zone_id">{{locality.name}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+    <ion-col size="12">
+      <ion-searchbar debounce="1000" placeholder="Buscar por documento" [(ngModel)]="search" (ionChange)="buscar()" showCancelButton="focus" cancelButtonText="borrar"></ion-searchbar>
+    </ion-col>
+    
+    <ion-col size="12">
+      <ion-item class="itemSelect" lines="none">
+        <ion-label>Generar reporte:</ion-label>
+        <ion-select [value]="reportMode" interface="popover" [(ngModel)]="reportMode" (ngModelChange)="report()" locokText="Aceptar" cancelText="Cerrar">
+          <ion-select-option value="0" disabled>Seleccionar</ion-select-option>
+          <ion-select-option [value]="1">Localidad</ion-select-option>
+          <ion-select-option [value]="2">Concesionario</ion-select-option>
+        </ion-select>
+      </ion-item>
+    </ion-col>
+
+  </ion-row>
+
+  <ion-row class="headerTittles">
+    <ion-col size="4">
+      Nombre
+    </ion-col>
+    <ion-col size="4">
+      Email
+    </ion-col>
+    <ion-col size="4">
+      Teléfono
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="contentList" *ngFor="let client of clientService.clients" (click)="edit(client)">
+    <ion-col size="4">
+      <ion-label>{{client.name}} {{client.lastName}}</ion-label>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-label>{{client.email}}</ion-label>
+    </ion-col>
+
+    <ion-col size="4">
+      <ion-label>{{client.phoneNumber}}</ion-label>
+    </ion-col>
+  </ion-row>
+
 </ion-content>
